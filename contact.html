@@ -29,35 +29,70 @@
 
         <p>If I missed anything regarding the power system, then tell me.</p>
 
-        <!-- ===== L11 · action and method are named now and explained properly in U6.
-       Nothing is submitted anywhere yet -- there is no backend until spring. ===== -->
         <form action="#" method="post">
 
             <!-- L11 · EVERY input gets a label, and for="" must match the input's id.
          Click the label text -- if the cursor jumps into the box, they match. -->
+            <!-- L12 · required means the browser refuses to submit without it, and
+         says so itself. No JavaScript written. -->
             <p>
                 <label for="name">Your name</label><br>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" name="name" placeholder="First name is fine" required>
             </p>
 
+            <!-- L12 · type="email" validates the shape AND changes the on-screen
+         keyboard on a phone. type="text" does neither. -->
             <p>
                 <label for="email">Email</label><br>
-                <input type="text" id="email" name="email">
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
             </p>
 
             <p>
-                <label for="power">Select one</label><br>
+                <label for="episodes">How many episodes of One piece have you watched?</label><br>
+                <input type="number" id="episodes" name="episodes" min="0" value="0">
+            </p>
+
+            <p>
+                <label for="when">Do you know when you started watching/reading</label><br>
+                <input type="date" id="when" name="when">
+            </p>
+
+            <p>
+                <label for="power">What power system did you have a question about</label><br>
                 <select id="power" name="power">
                     <option value="">-- pick one --</option>
                     <option value="devil fruits">Devil Fruits</option>
                     <option value="haki">Haki</option>
-                    <option value="other">Something else else</option>
+                    <option value="other">Something else</option>
                 </select>
             </p>
 
             <p>
-                <label for="why">What did I miss?</label><br>
-                <textarea id="why" name="why" rows="5" cols="40"></textarea>
+                <label for="question">What did I miss, and what questions do you have?</label><br>
+                <textarea id="question" name="question" rows="5" cols="40"></textarea>
+            </p>
+
+            <!-- L12 · a radio GROUP shares one name. Different names = they all stay
+         selectable at once, which is the classic radio-button bug. -->
+            <fieldset>
+                <legend>How many animes have you watched prior to one piece?</legend>
+                <p>
+                    <input type="radio" id="none" name="anime count" value="none" checked>
+                    <label for="none">None. One piece is my first</label>
+                </p>
+                <p>
+                    <input type="radio" id="some" name="anime count" value="some">
+                    <label for="some">1 - 5</label>
+                </p>
+                <p>
+                    <input type="radio" id="many" name="anime count" value="many">
+                    <label for="many">5+</label>
+                </p>
+            </fieldset>
+
+            <p>
+                <input type="checkbox" id="" name="" value="yes">
+                <label for="">I am caught up to One piece</label>
             </p>
 
             <p><button type="submit">Send it</button></p>
