@@ -1,57 +1,76 @@
-body {
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.6;
-  color: #222222;
-  background-color: #fdfdfb;
-  margin: 0 auto;
-  max-width: 45rem;
-  padding: 1.5rem;
+/* Palette */
+:root {
+  --dark:       #141853;   /* headings, header, links */
+  --light:      #eef4ee;   /* tinted boxes, footer */
+  --background: #fdfdfb;   /* the page, and the box the words sit on */
+  --accent:     #7a5901;   /* the second colour, used rarely */
+  --warning:    #b3261e;   /* only for warnings */
+  --text:       #222222;   /* body text */
+  --line:       #d6d3cc;   /* borders and rules */
 }
 
+/* --- element selector: every <body> on the site --- */
+body {
+  color: var(--text);
+  background-color: var(--background);
+}
 
 h1 {
+  color: var(--dark);
   font-size: 2rem;
-  color: #14532d;
 }
-
 
 h2 {
-  font-size: 1.4rem;
-  color: #145324;
-  border-bottom: 1px solid #d6d3cc;
+  color: var(--dark);
 }
-
 
 .intro {
-  background-color: #eef4ee;
-  padding: 1rem;
+  background-color: var(--light);
 }
-
 
 .warning {
-  color: #b3261e;
-  font-weight: bold;
+  color: var(--warning);
 }
 
-
-.skip-link {
-  position: absolute;
-  left: -9999px;
+#parks {
+  background-color: #ffffff;
 }
 
-.skip-link:focus {
-  left: 1rem;
-  top: 1rem;
-  background: #14532d;
+a {
+  color: var(--accent);
+}
+
+a {
+  color: var(--dark);
+}
+
+header {
+  background-color: var(--dark);
   color: #ffffff;
-  padding: .5rem 1rem;
 }
 
-
-a {
-  color: #7a5901;
+header a {
+  color: #ffffff;
 }
 
-a {
-  color: #14532d;
+footer {
+  background-color: var(--light);
+  color: var(--text);
+}
+
+blockquote {
+  background-color: rgba(20, 83, 45, 0.08);
+}
+
+body {
+  background-color: var(--dark); 
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;        
+  background-attachment: fixed;         
+}
+
+main {
+  background-color: var(--background);
 }
