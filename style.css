@@ -1,19 +1,21 @@
-/* Palette */
+* {
+  box-sizing: border-box;
+}
+
 :root {
-  --dark:       #063244;   /* headings, header, links */
-  --light:      #eef4ee;   /* tinted boxes, footer */
-  --background: #89fff5;   /* the page, and the box the words sit on */
-  --accent:     #7a5901;   /* the second colour, used rarely */
-  --warning:    #b3261e;   /* only for warnings */
-  --text:       #222222;   /* body text */
-  --line:       #d6d3cc;   /* borders and rules */
+  --dark: #00586e;
+  --light: hsl(180, 70%, 85%);
+  --background: #03f3d3;
+  --accent: #7a5901;
+  --warning: #b3261e;
+  --text: #222222;
+  --line: #d6d3cc;
 }
 
 body {
   color: var(--text);
   background-color: var(--background);
 }
-
 
 h1 {
   color: var(--dark);
@@ -23,7 +25,6 @@ h1 {
 h2 {
   color: var(--dark);
 }
-
 
 .intro {
   background-color: var(--light);
@@ -64,12 +65,12 @@ blockquote {
 }
 
 body {
-  background-color: var(--dark);      
+  background-color: var(--dark);
   background-image: url("");
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: cover;                 
-  background-attachment: fixed;          
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 main {
@@ -100,9 +101,9 @@ body {
 }
 
 blockquote {
-  margin: 1.5rem 0;       
-  padding: 1rem 1.5rem;  
-  border-left: 6px solid var(--dark);  
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 6px solid var(--dark);
 }
 
 h2 {
@@ -122,4 +123,50 @@ nav li {
 
 img {
   border: 4px solid #ffffff;
+}
+
+.intro {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+.contents {
+  max-width: 22rem;
+  background-color: var(--light);
+  padding: .75rem 1.25rem;
+}
+
+body {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background-color: var(--dark);
+  color: #ffffff;
+  padding: .5rem 1rem;
 }
