@@ -231,3 +231,60 @@ footer {
   font-size: .85rem;
   text-align: center; 
 }
+
+a:link {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--warning);  
+}
+
+header a:hover {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+ol {
+  list-style-type: decimal-leading-zero;
+}
+
+ul {
+  list-style-type: square;
+}
+
+.contents ul {
+  list-style-position: inside; 
+}
+
+#credits ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+dt {
+  font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+  font-weight: 700;
+}
+
+dd {
+  margin-left: 0;
+  margin-bottom: .75rem;
+}
+
+nav span {
+  margin-right: .35rem;
+}
