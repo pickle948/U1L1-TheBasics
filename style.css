@@ -232,6 +232,7 @@ footer {
   text-align: center; 
 }
 
+
 a:link {
   color: var(--dark);
   text-decoration: none;
@@ -287,4 +288,47 @@ dd {
 
 nav span {
   margin-right: .35rem;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: .5rem .75rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--light);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(20, 83, 45, 0.04);
+}
+
+tbody tr:hover {
+  background-color: rgba(122, 89, 1, 0.12);
+}
+
+caption {
+  caption-side: top;
+  padding: .5rem 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+#random {
+  display: none;
+}
+
+blockquote {
+  max-width: 36rem;
 }
