@@ -553,15 +553,13 @@ nav {
   border: 4px solid #ffffff;
 
   img {
-    display: block;
-    /* an inline img leaves a text-line gap under it */
+    display: block;                      /* an inline img leaves a text-line gap under it */
     width: 100%;
     border: 0;
   }
 
   figcaption {
-    position: absolute;
-    /* out of the flow; measured from .hero */
+    position: absolute;                  /* out of the flow; measured from .hero */
     left: 0;
     right: 0;
     bottom: 0;
@@ -578,4 +576,80 @@ nav {
        them only when needed. --- */
 .table-wrap {
   overflow-x: auto;
+}
+
+/* ============================================================
+   Float, inline-block, align.
+   Two layout tools older than Flexbox and still in every site you
+   use. Float is for text flowing round a photo, and that is all it
+   is for now. inline-block is a row of boxes, with a flaw that is
+   the reason Flexbox exists (U3 L7).
+   ============================================================ */
+
+/* --- FLOAT: the figure moves to one side and the paragraph flows round
+       it. A float only moves what comes AFTER it in the HTML, which is why
+       the figure sits above the paragraph. The margin keeps the words off
+       the frame; the width is what makes it a float and not a full-width
+       photo with nothing beside it.
+
+       display: flow-root on the box is the CONTAIN line. A float is taken
+       out of the flow, so without it the box ends at the paragraph and the
+       photo hangs out of the bottom. overflow: auto did the same job for
+       fifteen years, by accident; flow-root is the one made for it. --- */
+.intro {
+  display: flow-root;
+
+  .hero {
+    float: right;
+    width: 50%;
+    margin: 0 0 .5rem 1.5rem;
+  }
+}
+
+#who {
+  display: flow-root;
+
+  .hero {
+    float: left;
+    width: 45%;
+    margin: 0 1.5rem .5rem 0;
+  }
+}
+
+/* --- CLEAR: a heading never sits beside a float; it starts below it.
+       Written flat, not nested, because it belongs to every h2 on the
+       site and not to one part of the page. --- */
+h2 {
+  clear: both;
+}
+
+/* --- INLINE-BLOCK: three boxes in a row. Each is a word that takes a
+       width, so they sit side by side; vertical-align: top lines up their
+       tops instead of their baselines. 32% three times is 96%: the rest is
+       the SPACE CHARACTER between the </li> and the next <li>, which
+       inline-block treats as a word. That is its famous flaw. --- */
+.trail-groups {
+  list-style-type: none;
+  padding-left: 0;
+
+  .group {
+    display: inline-block;
+    vertical-align: top;
+    width: 32%;
+    padding: .75rem 1rem;
+    background-color: var(--light);
+    border: 1px solid var(--line);
+
+    /* ALIGN: the card's title centred, as a block of its own */
+    strong {
+      display: block;
+      text-align: center;
+      font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+    }
+
+    ul {
+      margin: .5rem 0 0;
+      padding-left: 1.1rem;
+    }
+  }
 }
